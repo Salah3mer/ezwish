@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:bee/screens/drawer/drawer.dart';
-import 'package:bee/screens/home_screen/home_screen.dart';
 import 'package:bee/screens/login_screen/login_screen.dart';
 import 'package:bee/screens/on_boarding_screen/on_bording_screen.dart';
 import 'package:bee/shared/components/components.dart';
@@ -17,14 +16,13 @@ class SplashScreen extends StatefulWidget
 class _SplashScreenState extends State<SplashScreen>
 {
   void initState(){
-
-   bool? onBoarding = CashHelper.getCashedData(key: 'onBoarding');
+    bool? onBoarding = CashHelper.getCashedData(key: 'onBoarding');
     Widget widget;
     if(onBoarding!=null){
       if(token==null){
         widget = LoginScreen();
       }else{
-        widget =HomeScreen();
+        widget =DrawerScreenWidget();
       }
     }else{
       widget=OnBoardingScreen();

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:bee/model/address/address.dart';
-import 'package:bee/model/address/address_model.dart';
 import 'package:bee/model/cart/add_or_remove_from_cart.dart';
 import 'package:bee/model/cart/cart_model.dart';
 import 'package:bee/model/category_model.dart';
