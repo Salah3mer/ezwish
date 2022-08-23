@@ -1,4 +1,5 @@
 import 'package:bee/screens/home_screen/home_screen.dart';
+import 'package:bee/screens/ordar/ordar_screen.dart';
 import 'package:bee/shared/components/components.dart';
 import 'package:bee/shared/cubit/app_cubit.dart';
 import 'package:bee/shared/style/icon_broken.dart';
@@ -183,7 +184,11 @@ class ProductScreen extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: defaultButton(
-                          function: () {}, text: 'Buy'),
+                          function: () {
+                            c.addOrRemoveFromCart(c.productDetailesModel!.data!.id!);
+                            c.getAddress();
+                            navegatTo(context, OrdarScreen());
+                          }, text: 'Buy'),
                     )
                   ],
                 ),

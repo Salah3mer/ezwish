@@ -1,5 +1,4 @@
 import 'package:bee/screens/drawer/drawer.dart';
-import 'package:bee/screens/home_screen/home_screen.dart';
 import 'package:bee/screens/register_screen/register_screen.dart';
 import 'package:bee/shared/components/components.dart';
 import 'package:bee/shared/components/const.dart';
