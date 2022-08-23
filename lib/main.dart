@@ -48,10 +48,9 @@ class MyApp extends StatelessWidget {
             ..getFavorites()
             ..getCart()
             ..getOrdars()
-            ..getCategory()
-            ..getQuestions())
-          : (AppCubit()
-            ..getQuestions()
+            ..getCategory()..getQuestions()
+            )
+          : (AppCubit()..getQuestions()
             ..getCategory()),
       child: BlocConsumer<AppCubit, AppState>(
         listener: (context, state) {},
