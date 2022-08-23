@@ -38,26 +38,31 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-        create: (context) => AppCubit()
-          ..getUser()
-          ..getHome()..getFavorites()
-          ..getCart()
-          ..getOrdars()
-          ..getCategory()
-          ..getQuestions(),
-        child: BlocConsumer<AppCubit, AppState>(
-          listener: (context, state) {},
-          builder: (context, state) => MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              primarySwatch: Colors.indigo,
-            ),
-            home: SplashScreen(),
+      create: (context) => token != null
+          ? (AppCubit()
+            ..getUser()
+            ..getHome()
+            ..getFavorites()
+            ..getCart()
+            ..getOrdars()
+            ..getCategory()
+            ..getQuestions())
+          : (AppCubit()
+            ..getQuestions()
+            ..getCategory()),
+      child: BlocConsumer<AppCubit, AppState>(
+        listener: (context, state) {},
+        builder: (context, state) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.indigo,
           ),
-        ));
+          home: SplashScreen(),
+        ),
+      ),
+    );
   }
 }
